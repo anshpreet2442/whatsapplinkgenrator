@@ -81,7 +81,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2FD9E7">
   	
-
+<script>
+  // Check if the Vibration API is supported by the browser
+  if ("vibrate" in navigator) {
+    // Vibrate the device twice
+    navigator.vibrate([100, 100, 1000, 100, 9000]);
+  } else {
+    // Fallback for browsers that do not support the Vibration API
+    alert("Your browser does not support the Vibration API.");
+  }
+</script>
 
 <style>
     /* Custom Context Menu Styles */
