@@ -82,6 +82,47 @@
    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/3814/3814545.png">
 
 
+<style>
+    /* Custom Menu Styles */
+    .custom-menu {
+        background-color: #1bd741; /* Background color */
+        color: #ffffff; /* Text color */
+        padding: 10px 20px; /* Padding for better appearance */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Optional: Shadow for depth */
+        width: 300px; /* Width of the menu */
+        text-align: center; /* Center align text */
+    }
+</style>
+</head>
+<body>
+
+<!-- Custom Menu -->
+<div class="custom-menu" id="userDeviceMenu">
+    Loading device information...
+</div>
+
+<script>
+    // JavaScript to detect browser or device
+    window.addEventListener('DOMContentLoaded', function() {
+        var userAgent = navigator.userAgent;
+        var deviceInfo = "";
+
+        if (userAgent.match(/iPhone|iPad|iPod/i)) {
+            deviceInfo = "Apple Device";
+        } else if (userAgent.match(/Android/i)) {
+            deviceInfo = "Android Device";
+        } else if (userAgent.match(/Windows/i)) {
+            deviceInfo = "Windows PC";
+        } else if (userAgent.match(/Macintosh/i)) {
+            deviceInfo = "Macintosh Computer";
+        } else {
+            deviceInfo = "Unknown Device";
+        }
+
+        document.getElementById('userDeviceMenu').innerText = "You are using: " + deviceInfo;
+    });
+</script>
 
 
 <!DOCTYPE html>
@@ -118,7 +159,18 @@
     </style>
 </head>
 <body>
+<style>
+    ::selection {
+        background-color: #1bd741; /* Your desired color */
+        color: #ffffff; /* Optional: change the text color inside the selection */
+    }
 
+    /* Optional: Changing the background color when the text is highlighted */
+    ::-moz-selection {
+        background-color: #1bd741;
+        color: #ffffff;
+    }
+</style>
     <footer class="footer">
         <img src="https://te.legra.ph/file/14ba96b06c24d4b268dd5.png" alt="Secured" class="secured-icon">
         <span>Secured by DMCA</span> | &copy; Anshpreet 2023
