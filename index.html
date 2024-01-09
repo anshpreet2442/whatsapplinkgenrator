@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Link Generator</title>
+<meta name="description" content="Page by Anshpreet">
+    <style>
+      /* Define the neumorphism style */
+      body {
+        background-color: #e0e5ec;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        background-color: #e0e5ec;
+        box-shadow: 5px 5px 20px #bdc7d4, -5px -5px 20px #ffffff;
+        border-radius: 30px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input {
+        border: none;
+        outline: none;
+        background-color: #e0e5ec;
+        font-size: 16px;
+        padding: 10px;
+        margin: 10px;
+        box-shadow: inset 5px 5px 10px #bdc7d4, inset -5px -5px 10px #ffffff;
+        border-radius: 20px;
+        width: 300px;
+      }
+      button {
+        background-color: #1bd741;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px #bdc7d4, -5px -5px 10px #ffffff;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #13b233;
+      }
+      button:active {
+        background-color: #0d8c24;
+        box-shadow: inset 5px 5px 10px #bdc7d4, inset -5px -5px 10px #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>WhatsApp Link Generator</h1>
+      <p>Enter your message and phone number below:</p>
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message">
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone">
+      <button type="button" onclick="createLink()">Generate Link</button>
+    </form>
+    <script>
+      function createLink() {
+        var message = document.getElementById("message").value;
+        var phone = document.getElementById("phone").value;
+        var link = "https://api.whatsapp.com/send?phone=+91" + phone + "&text=" + encodeURIComponent(message);
+        window.location.href = link;
+      }
+    </script>
+  </body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2FD9E7">
+  	
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paytm Payment QR Code Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding-bottom: 50px; /* Add padding to avoid content overlap with the footer */
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 10px 0;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .secured-icon {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="footer">
+        <img src="https://te.legra.ph/file/14ba96b06c24d4b268dd5.png" alt="Secured" class="secured-icon">
+        <span>Secured by DMCA</span> | &copy; Anshpreet 2023
+    </footer>
+</body>
+</html>
