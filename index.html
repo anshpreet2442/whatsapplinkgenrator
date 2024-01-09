@@ -76,18 +76,7 @@ input {
       <p>Enter your message and phone number below:</p>
       <label for="message">Message: (Optional)</label>
       <input type="text" id="message" name="message">
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone">
-      <button type="button" onclick="createLink()">Generate Link</button>
-    </form>
-    <script>
-      function createLink() {
-        var message = document.getElementById("message").value;
-        var phone = document.getElementById("phone").value;
-        var link = "https://api.whatsapp.com/send?phone=+91"+phone+"&text="+encodeURIComponent(message);
-        window.location.href = link;
-      }
-    </script>
+    v
   </body>
 </html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
