@@ -26,17 +26,29 @@
         flex-direction: column;
         align-items: center;
       }
-      input {
-        border: none;
-        outline: none;
-        background-color: #e0e5ec;
-        font-size: 16px;
-        padding: 10px;
-        margin: 10px;
-        box-shadow: inset 5px 5px 10px #bdc7d4, inset -5px -5px 10px #ffffff;
-        border-radius: 20px;
-        width: 300px;
-      }
+   @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+input {
+    border: none;
+    outline: none;
+    background-color: #e0e5ec;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: inset 5px 5px 10px #bdc7d4, inset -5px -5px 10px #ffffff;
+    border-radius: 20px;
+    width: 300px;
+    font-family: 'Pacifico', cursive; /* Using the Pacifio font */
+    color: #1bd741; /* Setting text color to green */
+    animation: typewriter 2s steps(40, end); /* Applying the typewriter animation */
+    overflow: hidden; /* Ensures the animation stays inside the input box */
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
       button {
         background-color: #1bd741;
         border: none;
