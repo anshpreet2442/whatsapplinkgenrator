@@ -83,26 +83,46 @@
 
 
 <style>
-    /* Custom Menu Styles */
-    .custom-menu {
+    /* Custom Context Menu Styles */
+    .custom-context-menu {
+        display: none; /* Initially hidden */
+        position: fixed; /* Fixed position on the viewport */
         background-color: #1bd741; /* Background color */
         color: #ffffff; /* Text color */
         padding: 10px 20px; /* Padding for better appearance */
         border-radius: 5px; /* Rounded corners */
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Optional: Shadow for depth */
-        width: 300px; /* Width of the menu */
-        text-align: center; /* Center align text */
+        z-index: 1000; /* Higher z-index to appear on top */
     }
 </style>
 </head>
 <body>
 
-<!-- Custom Menu -->
-<div class="custom-menu" id="userDeviceMenu">
+<!-- Custom Context Menu -->
+<div class="custom-context-menu" id="userDeviceMenu">
     Loading device information...
 </div>
 
 <script>
+    // Function to display the context menu
+    function showContextMenu(event) {
+        event.preventDefault(); // Prevent default right-click menu
+        var menu = document.getElementById('userDeviceMenu');
+        menu.style.left = event.pageX + 'px'; // Position based on mouse click
+        menu.style.top = event.pageY + 'px';
+        menu.style.display = 'block';
+    }
+
+    // Function to hide the context menu
+    function hideContextMenu() {
+        var menu = document.getElementById('userDeviceMenu');
+        menu.style.display = 'none';
+    }
+
+    // Event listeners
+    document.addEventListener('contextmenu', showContextMenu); // Show context menu on right-click
+    document.addEventListener('click', hideContextMenu); // Hide context menu on click anywhere
+
     // JavaScript to detect browser or device
     window.addEventListener('DOMContentLoaded', function() {
         var userAgent = navigator.userAgent;
