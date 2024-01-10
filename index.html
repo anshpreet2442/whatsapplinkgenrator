@@ -131,6 +131,38 @@ textarea#message {
 
 
 
+h1 {
+  /* Gradient background */
+  background: linear-gradient(45deg, pink, purple, mistyblue);
+  /* Adding a bit of padding and text shadow for better visibility */
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /* Center the text */
+  text-align: center;
+  /* Make the text transparent initially */
+  color: transparent;
+  /* Setting a fixed width for the demonstration purpose */
+  width: 200px;
+  /* Animations */
+  animation: reveal 4s forwards; /* 4s is the duration, adjust as needed */
+}
+
+/* Hover animation */
+h1:hover {
+  animation: none; /* Disable the previous animation on hover */
+  color: transparent;
+}
+
+/* Animation keyframes */
+@keyframes reveal {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+    color: white; /* Adjust text color as needed */
+  }
+}
 
 
     </style>
@@ -138,6 +170,7 @@ textarea#message {
 
 <body>
     <form>
+<h1>WHATSAPP LINK GENERATOR</h1>
         <label for="phone">Phone Number:</label>
         <input type="text" id="phone" name="phone" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onfocus="showToast()">
         <label for="message">Message:</label>
