@@ -71,13 +71,80 @@ input {
     </style>
   </head>
   <body>
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Link Generator</title>
+    <style>
+        /* Add some basic styles for the toast */
+        #toast {
+            visibility: hidden;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadeOut 3s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
     <form>
-      <h1>WhatsApp Link Generator</h1>
-      <p>Enter your message and phone number below:</p>
-      <label for="message">Message: (Optional)</label>
-      <input type="text" id="message" name="message">
-    v
-  </body>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" oninput="this.value = this.value.replace(/[^0-9]/g, '');" onfocus="showToast()">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="button" onclick="createLink()">Generate Link</button>
+    </form>
+
+    <!-- Toast Message -->
+    <div id="toast">Please enter the country code and '+' sign.</div>
+
+    <script>
+        function createLink() {
+            var message = document.getElementById("message").value;
+            var phone = document.getElementById("phone").value;
+            var link = "https://api.whatsapp.com/send?phone=+" + phone + "&text=" + encodeURIComponent(message);
+            window.location.href = link;
+        }
+
+        function showToast() {
+            var toast = document.getElementById("toast");
+            toast.classList.add("show");
+
+            setTimeout(function () {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
+
 </html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2FD9E7">
